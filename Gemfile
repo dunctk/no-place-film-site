@@ -19,4 +19,6 @@ gem "middleman-deploy"
 
 gem  "middleman-minify-html"
 
-gem "middleman-imageoptim", "~> 0.0.4"
+gem 'middleman-s3_sync'
+
+gem "middleman-cloudfront"
