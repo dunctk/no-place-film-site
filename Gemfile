@@ -16,3 +16,5 @@ platforms :mri_18 do
 end
 
 gem "middleman-deploy"
+
+gem  "middleman-minify-html"
