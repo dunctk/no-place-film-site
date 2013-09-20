@@ -1,0 +1,41 @@
+<div id="gallery" class="dark-section">
+	<div class="container col-lg-12">
+		<h1>Behind the Scenes</h1>
+
+		<div class="zoom-gallery">
+			<% for image in 100..163 do %>
+			    	<a href="/images/gallery/full-size/gallery-<%= image %>.jpg" class="item">
+			    		<img src="/images/gallery/thumbnails/gallery-<%= image %>.jpg" height="125" width="193" >
+			    	</a>
+			<% end %>
+		</div>
+		<script>
+
+		$(document).ready(function() {
+			$('.zoom-gallery').magnificPopup({
+				delegate: 'a',
+				type: 'image',
+				closeOnContentClick: false,
+				closeBtnInside: false,
+				mainClass: 'mfp-with-zoom mfp-img-mobile',
+				image: {
+					verticalFit: true,
+
+				},
+				gallery: {
+					enabled: true
+				},
+				zoom: {
+					enabled: true,
+					duration: 300, // don't foget to change the duration also in CSS
+					opener: function(element) {
+						return element.find('img');
+					}
+				}
+				
+			});
+		});
+		</script>
+	</div>
+</div>
+
