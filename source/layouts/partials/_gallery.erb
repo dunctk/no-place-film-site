@@ -5,7 +5,7 @@
 		<div class="zoom-gallery">
 			<% for image in 100..163 do %>
 			    	<a href="/images/gallery/full-size/gallery-<%= image %>.jpg" class="item">
-			    		<img src="/images/gallery/thumbnails/gallery-<%= image %>.jpg" height="125" width="193" >
+			    		<img src="/images/gallery/thumbnails/gallery-<%= image %>.jpg" height="125" width="193" class="thumbnail-image">
 			    	</a>
 			<% end %>
 		</div>
@@ -20,6 +20,7 @@
 				mainClass: 'mfp-with-zoom mfp-img-mobile',
 				image: {
 					verticalFit: true,
+					verticalGap:88,
 
 				},
 				gallery: {

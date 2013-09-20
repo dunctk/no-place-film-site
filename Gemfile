@@ -18,3 +18,5 @@ end
 gem "middleman-deploy"
 
 gem  "middleman-minify-html"
+
+gem "middleman-imageoptim", "~> 0.0.4"
