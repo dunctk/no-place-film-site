@@ -15,7 +15,7 @@
   <body class="page_classes">
       <header class="text-center">
         <div class="banner container col-lg-12">
-          <%= image_tag 'no-place-banner-no-text.jpg', :class => 'img-responsive logo-banner' %>
+          <%= image_tag 'no-place-banner-no-text.jpg', :class => 'img-responsive logo-banner', :alt => "No Place" %>
         </div>
           <nav class="navbar navbar-default navbar-static-top navbar-primary" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,11 +34,11 @@
               <ul class="nav navbar-nav">
                 <li><a href="#story">Story</a></li>
                 <li><a href="#cast">Cast</a></li>
+                <li><a href="#crew">Crew</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-               <li><a href="http://www.facebook.com/noplacemovie">Like us</a></li>
+               <li><a href="http://www.facebook.com/noplacemovie" target="_blank">Like us</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div>
@@ -47,7 +47,7 @@
         
       </header>
       <%= yield %>
-    </div>
+
    
 
     <script>

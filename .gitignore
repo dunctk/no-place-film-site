@@ -17,4 +17,4 @@
 .DS_Store
 
 .s3_sync
-
+aws.yml

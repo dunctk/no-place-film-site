@@ -77,11 +77,25 @@ activate :deploy do |deploy|
 
 end
 
+aws_config = YAML::load(File.open('aws.yml'))
+
+
+
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = 'my.bucket.com' # The name of the S3 bucket you are targetting. This is globally unique.
-  s3_sync.region                     = 'us-west-1'     # The AWS region for your bucket.
+  s3_sync.bucket                     = aws_config['s3_bucket'] # The name of the S3 bucket you are targetting. This is globally unique.
+  s3_sync.region                     = aws_config['aws_region']     # The AWS region for your bucket.
+  s3_sync.aws_access_key_id          = aws_config['access_key_id']
+  s3_sync.aws_secret_access_key      = aws_config['secret_access_key']
   s3_sync.delete                     = false # We delete stray files by default.
   s3_sync.after_build                = false # We chain after the build step by default. This may not be your desired behavior...
   s3_sync.prefer_gzip                = true
   s3_sync.reduced_redundancy_storage = false
+  end
+
+activate :cloudfront do |cf|
+  cf.access_key_id              = aws_config['access_key_id']
+  cf.secret_access_key          = aws_config['secret_access_key']
+  cf.distribution_id            = aws_config['cloud_front_dist_id']
+  cf.filter                     = /(.html|.xml)/
+  cf.after_build                = false
 end
